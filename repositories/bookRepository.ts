@@ -25,7 +25,7 @@ class BookRepository {
   }
 
   async delete(id: string) {
-    const result = await colldb.deleteOne({title: id});
+    const result = await colldb.deleteOne({_id: {"$oid": id}});
     return result;
   }
 }
